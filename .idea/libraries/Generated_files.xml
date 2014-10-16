@@ -14,7 +14,7 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/coffees/test.js" />
       <root url="file://$PROJECT_DIR$/test.js" />
-      <root url="file://$PROJECT_DIR$/jslibs/fileTree.js" />
+      <root url="file://$PROJECT_DIR$/jslibs/directorySet.js" />
       <root url="file://$PROJECT_DIR$/files/watchFile.js" />
       <root url="file://$PROJECT_DIR$/files/index.js" />
       <root url="file://$PROJECT_DIR$/coffees/test.js" />

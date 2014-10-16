@@ -1,5 +1,5 @@
 watchFile = require './files/watchFile'
-Dir = require './jslibs/fileTree'
+Dir = require './jslibs/directorySet'
 #'localhost':sync dirs between local directories
 # provide path of directories
 #'net':sync dirs or files between computers
@@ -14,7 +14,7 @@ process.argv.forEach (_v, _i)->
     if _i is 2
       type = _v
     else
-      dirArr[_i - 3] = new Dir(_v);
+      dirArr[_i - 3] = new Dir(_v,'');
   return
 
 watchFile.setDirs dirArr

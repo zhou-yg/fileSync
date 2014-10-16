@@ -1,5 +1,5 @@
 fs = require 'fs'
-Node = require './jslibs/fileTree.js'
+Node = require './jslibs/directorySet.js'
 
 root = new Node [1,2,3]
 n1 = new Node 'a'

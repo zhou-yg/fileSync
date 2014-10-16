@@ -1,6 +1,6 @@
 fs = require 'fs'
-Dir = require '../jslibs/fileTree.js'
-
+DirecotrySet = require '../jslibs/directorySet.js'
+#根目录对象集合
 dirObjArr = []
 filesArr = []
 
@@ -11,83 +11,78 @@ setDirs = (_dirObjArr)->
 
 #read files
 readFiles = ->
-  readAllFilesSync = (_dirObj)->
-
-    filenameArr = fs.readdirSync _dirObj.path
+  readAllFilesSync = (_rootPath,_dirObj,_tier)->
+    _tier++
+    filenameArr = fs.readdirSync (_rootPath+'\\'+_dirObj.dirPath)
 
     filenameArr.forEach (_f)->
-      _f = _dirObj.path + '\\' + _f
-      stat = fs.statSync _f
+      intactPath = _rootPath+'\\'+_dirObj.dirPath+'\\'+_f
+      stat = fs.statSync intactPath
 
       if stat.isDirectory()
-        _f = new Dir(_f)
-        _dirObj.append _f
-        readAllFilesSync _f
+        intactPath = new DirecotrySet(_rootPath,_f)
+        _dirObj.append intactPath
+        readAllFilesSync _rootPath,intactPath,_tier
       else
         _dirObj.push _f
 
-  ###
-  readAllFilesSync = (_path,_filesArr)->
-    stat = fs.statSync _path
-
-    if stat.isDirectory()
-
-      filenameArr = fs.readdirSync _path
-
-      _filesArr.push []
-      _filesArr[_filesArr.length-1].push _path
-
-      if _path.indexOf('/') isnt -1
-        p = '/'
-      else
-        p = '\\'
-
-      filenameArr.forEach (_f)->
-        readAllFiles  "#{_path}#{p}#{_f}",_filesArr[_filesArr.length-1]
-    else
-      _filesArr.push _path
-
-    return
-  ###
-  readAllFiles = (_path,_filesArr)->
-
-    fs.stat _path,(_e,_stat)->
-      if _e then throw _e
-      if _stat.isDirectory()
-
-        fs.readdir _path,(_e,_files)->
-          if _e then throw _e
-
-          _filesArr.push []
-          _filesArr[_filesArr.length-1].push _path
-
-          if _path.indexOf('/') is -1
-            p = '\\'
-          else
-            p = '/'
-          _files.forEach (_f)->
-
-            readAllFiles "#{_path}#{p}#{_f}",_filesArr[_filesArr.length-1]
-      else
-        _filesArr.push _path
-    return
-
   dirObjArr.forEach (_dirObj)->
-    readAllFilesSync _dirObj
+    readAllFilesSync _dirObj.rootPath,_dirObj,0
 
-  dirObjArr.forEach (_dirObj)->
-    do _dirObj.display
+  do setFileWatch
 
   return
 
+setFileWatch = ->
+
+  fwMap = {}
+
+  dirObjArr.forEach (_dirObj)->
+    #当前目录下的多有目录对象集合
+    allDir = _dirObj.iterateObj 0
+
+    for dir in allDir
+      do ->
+
+        mydir = do dir.clone
+
+        myRootPath  = mydir.rootPath
+        baseDirPath = mydir.dirPath
+        allFiles    = mydir.display 1
+
+        myPath = myRootPath+baseDirPath
+
+        for f in allFiles
+          do ->
+            fileChangeTrigger = 1
+
+            fileWatcher = (_evt,_filename)->
+              if _evt is 'change' and fileChangeTrigger++%2 is 0
+
+                dirObjArr.forEach (__dirObj)->
+                  targetDir = __dirObj.searchDirByPath baseDirPath
+                  targetPath = targetDir.rootPath+'\\'+targetDir.dirPath+'\\'+_filename;
+
+                  if targetPath isnt f
+                    do fwMap[targetPath].close
+
+                    fs.readFile f,(_err,_data)->
+                      fs.writeFile targetPath,_data,(_err)->
+                        fwMap[targetPath] = fs.watch f,fileWatcher
+
+            fwMap[f] = fs.watch f,fileWatcher
+
+
+  return
+###
 #watch same name files
-fileWatch = (_evt,_baseDir,_filename)->
+fileWatchXXX = (_evt,_baseDir,_filename)->
   if _evt is 'change' and fileChangeTrigger++%2 is 0
 
     dirArr.forEach (_dir,_i)->
       if dir isnt _dir
 
-        targetPath = _dir + '\\' + _filename
+        targetPath = _dir+'\\'+_filename
         do fwMap[targetPath].close
 
         fs.readFile path,(_err,_data)->
@@ -97,7 +92,6 @@ fileWatch = (_evt,_baseDir,_filename)->
             if _err then throw _err
             fwMap[targetPath] = fs.watch targetPath,fileWatch
   return
-###
 fwMap = {}
 setWatch = ->
 

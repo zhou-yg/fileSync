@@ -4,7 +4,7 @@
 
   watchFile = require('./files/watchFile');
 
-  Dir = require('./jslibs/fileTree');
+  Dir = require('./jslibs/directorySet');
 
   type = '';
 
@@ -15,7 +15,7 @@
       if (_i === 2) {
         type = _v;
       } else {
-        dirArr[_i - 3] = new Dir(_v);
+        dirArr[_i - 3] = new Dir(_v, '');
       }
     }
   });
