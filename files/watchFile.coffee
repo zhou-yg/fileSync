@@ -71,54 +71,5 @@ setFileWatch = ->
                         fwMap[targetPath] = fs.watch f,fileWatcher
 
             fwMap[f] = fs.watch f,fileWatcher
-
-
   return
-###
-#watch same name files
-fileWatchXXX = (_evt,_baseDir,_filename)->
-  if _evt is 'change' and fileChangeTrigger++%2 is 0
-
-    dirArr.forEach (_dir,_i)->
-      if dir isnt _dir
-
-        targetPath = _dir+'\\'+_filename
-        do fwMap[targetPath].close
-
-        fs.readFile path,(_err,_data)->
-          if _err then throw _err
-
-          fs.writeFile targetPath,_data,(_err)->
-            if _err then throw _err
-            fwMap[targetPath] = fs.watch targetPath,fileWatch
-  return
-fwMap = {}
-setWatch = ->
-
-  filesArr.forEach (_files,_i)->
-    _files.forEach (_file)->
-      dir = dirArr[_i]
-      path = dir + '\\'+_file
-
-      fileChangeTrigger = 1
-
-      fileWatch = (_evt,_filename)->
-        if _evt is 'change' and fileChangeTrigger++%2 is 0
-
-          dirArr.forEach (_dir,_i)->
-            if dir isnt _dir
-
-              targetPath = _dir + '\\' + _filename
-              do fwMap[targetPath].close
-
-              fs.readFile path,(_err,_data)->
-                if _err then throw _err
-
-                fs.writeFile targetPath,_data,(_err)->
-                  if _err then throw _err
-                  fwMap[targetPath] = fs.watch targetPath,fileWatch
-        return
-
-      fwMap[path] = fs.watch path,fileWatch
-###
 exports.setDirs = setDirs
