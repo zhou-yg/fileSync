@@ -31,7 +31,7 @@ setFileWatch1 = ->
         if _mydirObj.rootPath isnt __dirObj.rootPath
           fileWatcher.emit 'writeLocal',__dirObj,_mydirObj,_filename
     else if type is SYNC_TO_LAN_S
-      
+
     else if type is SYNC_TO_LAN_C
 ###
 #read files
