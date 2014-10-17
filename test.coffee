@@ -1,11 +1,30 @@
-fs = require 'fs'
-Node = require './jslibs/directorySet.js'
+fs  = require 'fs'
+net = require 'net'
+events = require 'events'
 
-root = new Node [1,2,3]
-n1 = new Node 'a'
-n2 = new Node 'b'
 
-root.push n1
-root.push n2
+o = new events.EventEmitter()
 
-do root.display
+o.on 'e1',(arg)->
+  console.log arg
+o.on 'e1',(arg)->
+  console.log arg
+o.emit('e1','x')
+
+###
+clientList = []
+
+server.on 'connection',(_client)->
+
+  console.log 'clinet connected'
+
+  _client.on 'data',(_data)->
+    console.log _data
+
+  _client.on 'end',(_data)->
+    console.log 'client end',_data
+
+server.listen 8888,->
+  console.log 'server is running'
+  ###
+###

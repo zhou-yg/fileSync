@@ -2,9 +2,9 @@
 (function() {
   var Dir, dirArr, type, watchFile;
 
-  watchFile = require('./files/watchFile');
+  watchFile = require('./lib/watchFile');
 
-  Dir = require('./jslibs/directorySet');
+  Dir = require('./dslib/directorySet');
 
   type = '';
 
@@ -20,7 +20,11 @@
     }
   });
 
-  watchFile.setDirs(dirArr);
+  if (type === 'lan_server ' || type === 'lan_client') {
+    dirArr = dirArr[0];
+  }
+
+  watchFile.setDirs(dirArr, type);
 
 }).call(this);
 

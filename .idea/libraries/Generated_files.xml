@@ -2,22 +2,24 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/jslibs/fileTree.js" />
+        <item url="file://$PROJECT_DIR$/testConnectTo.js" />
         <item url="file://$PROJECT_DIR$/test.js" />
-        <item url="file://$PROJECT_DIR$/files/watchFile.js" />
-        <item url="file://$PROJECT_DIR$/coffees/test.js" />
-        <item url="file://$PROJECT_DIR$/files/index.js" />
+        <item url="file://$PROJECT_DIR$/lib/watchFile.js" />
+        <item url="file://$PROJECT_DIR$/lib/dirWacher.js" />
+        <item url="file://$PROJECT_DIR$/lib/index.js" />
         <item url="file://$PROJECT_DIR$/index.js" />
         <item url="file://$PROJECT_DIR$/config/index.js.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/coffees/test.js" />
-      <root url="file://$PROJECT_DIR$/test.js" />
-      <root url="file://$PROJECT_DIR$/jslibs/directorySet.js" />
-      <root url="file://$PROJECT_DIR$/files/watchFile.js" />
-      <root url="file://$PROJECT_DIR$/files/index.js" />
       <root url="file://$PROJECT_DIR$/coffees/test.js" />
+      <root url="file://$PROJECT_DIR$/testConnectTo.js" />
+      <root url="file://$PROJECT_DIR$/dslib/directorySet.js" />
+      <root url="file://$PROJECT_DIR$/test.js" />
+      <root url="file://$PROJECT_DIR$/lib/dirWacher.js" />
+      <root url="file://$PROJECT_DIR$/lib/watchFile.js" />
+      <root url="file://$PROJECT_DIR$/lib/index.js" />
       <root url="file://$PROJECT_DIR$/index.js" />
       <root url="file://$PROJECT_DIR$/config/index.js.js" />
     </CLASSES>

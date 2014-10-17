@@ -1,12 +1,15 @@
-watchFile = require './files/watchFile'
-Dir = require './jslibs/directorySet'
-#'localhost':sync dirs between local directories
-# provide path of directories
-#'net':sync dirs or files between computers
-# provide ip:port,a path of dir (to save these files)
+watchFile = require './lib/watchFile'
+Dir = require './dslib/directorySet'
+#'local':sync dirs between local directories
+#'lan_server':has latest version of files.sync dirs or files between computers
+#'lan_client':connect to and get the latest of flies.sync dirs or files between computers
+
+#in local
+#一个目录参数为主目录，后续的为目录参数为次目录参数,
+#区别在于，程序启动时，会自动将主目录的内容同步到次目录。
+#in lan
+
 type = ''
-#get directory
-#(or get a file,current doesn't support)
 
 dirArr = []
 process.argv.forEach (_v, _i)->
@@ -17,4 +20,8 @@ process.argv.forEach (_v, _i)->
       dirArr[_i - 3] = new Dir(_v,'');
   return
 
-watchFile.setDirs dirArr
+if type is 'lan_server ' or  type is 'lan_client'
+  dirArr = dirArr[0]
+
+
+watchFile.setDirs dirArr,type
