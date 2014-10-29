@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "fileFilter.js",
+  "sourceRoot": "",
+  "sources": [
+    "fileFilter.coffee"
+  ],
+  "names": [],
+  "mappings": ";AACA;AAAA,EAAA,MAAM,CAAC,OAAP,GACE;AAAA,IAAA,MAAA,EAAO,SAAC,SAAD,GAAA,CAAP;GADF,CAAA;AAAA"
+}

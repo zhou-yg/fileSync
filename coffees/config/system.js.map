@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "system.js",
+  "sourceRoot": "",
+  "sources": [
+    "system.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,MAAM,CAAC,OAAP,GACE;AAAA,IAAA,QAAA,EACE;AAAA,MAAA,aAAA,EAAc,OAAd;AAAA,MACA,aAAA,EAAc,YADd;AAAA,MAEA,aAAA,EAAc,YAFd;KADF;GADF,CAAA;AAAA"
+}

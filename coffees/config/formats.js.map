@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "formats.js",
+  "sourceRoot": "",
+  "sources": [
+    "formats.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA,OAAA;;AAAA,EAAA,MAAM,CAAC,OAAP,GAEE,OAAA,GAAU,GAFZ,CAAA;AAAA"
+}
