@@ -17,7 +17,7 @@ readAllFilesSync = (_rootPath,_dirObj,_tier)->
   filenameArr = fs.readdirSync (_rootPath+'\\'+_dirObj.dirPath)
 
   filenameArr.forEach (_f)->
-    #相对目录命f，目录下文件命_f
+    #相对目录名f，目录下文件名_f
     if _dirObj.dirPath
       intactPath = _rootPath+'\\'+_dirObj.dirPath+'\\'+_f
       f = _dirObj.dirPath+'\\'+_f

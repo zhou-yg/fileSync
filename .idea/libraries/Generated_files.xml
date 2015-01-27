@@ -2,16 +2,17 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/coffees/dslib/directorySet.js" />
-        <item url="file://$PROJECT_DIR$/coffees/config/system.js" />
-        <item url="file://$PROJECT_DIR$/test.js" />
-        <item url="file://$PROJECT_DIR$/coffees/dslib/fileFilter.js" />
         <item url="file://$PROJECT_DIR$/coffees/index.js" />
+        <item url="file://$PROJECT_DIR$/coffees/dslib/directorySet.js" />
+        <item url="file://$PROJECT_DIR$/test.js" />
+        <item url="file://$PROJECT_DIR$/quickSort].js" />
         <item url="file://$PROJECT_DIR$/coffees/test.js" />
-        <item url="file://$PROJECT_DIR$/coffees/lib/dirWacher.js" />
         <item url="file://$PROJECT_DIR$/coffees/lib/watchFile.js" />
         <item url="file://$PROJECT_DIR$/coffees/config/formats.js" />
+        <item url="file://$PROJECT_DIR$/coffees/lib/dirWacher.js" />
         <item url="file://$PROJECT_DIR$/Gruntfile.js" />
+        <item url="file://$PROJECT_DIR$/coffees/config/system.js" />
+        <item url="file://$PROJECT_DIR$/coffees/dslib/fileFilter.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -23,17 +24,18 @@
       <root url="file://$PROJECT_DIR$/lib/index.js" />
       <root url="file://$PROJECT_DIR$/coffees/Gruntfile.js" />
       <root url="file://$PROJECT_DIR$/coffees/Gruntfile.js" />
-      <root url="file://$PROJECT_DIR$/coffees/dslib/directorySet.js" />
-      <root url="file://$PROJECT_DIR$/coffees/config/system.js" />
-      <root url="file://$PROJECT_DIR$/test.js" />
-      <root url="file://$PROJECT_DIR$/coffees/dslib/fileFilter.js" />
-      <root url="file://$PROJECT_DIR$/lib/watchFile.js" />
-      <root url="file://$PROJECT_DIR$/coffees/lib/dirWacher.js" />
-      <root url="file://$PROJECT_DIR$/coffees/test.js" />
       <root url="file://$PROJECT_DIR$/coffees/index.js" />
-      <root url="file://$PROJECT_DIR$/coffees/config/formats.js" />
+      <root url="file://$PROJECT_DIR$/coffees/dslib/directorySet.js" />
+      <root url="file://$PROJECT_DIR$/test.js" />
+      <root url="file://$PROJECT_DIR$/quickSort].js" />
+      <root url="file://$PROJECT_DIR$/coffees/test.js" />
       <root url="file://$PROJECT_DIR$/coffees/lib/watchFile.js" />
+      <root url="file://$PROJECT_DIR$/coffees/config/formats.js" />
+      <root url="file://$PROJECT_DIR$/coffees/lib/dirWacher.js" />
+      <root url="file://$PROJECT_DIR$/coffees/config/system.js" />
       <root url="file://$PROJECT_DIR$/Gruntfile.js" />
+      <root url="file://$PROJECT_DIR$/lib/watchFile.js" />
+      <root url="file://$PROJECT_DIR$/coffees/dslib/fileFilter.js" />
     </CLASSES>
     <SOURCES />
   </library>
