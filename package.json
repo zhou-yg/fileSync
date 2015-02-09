@@ -4,6 +4,7 @@
   "description": "sync files in multi client",
   "main": "index.js",
   "dependencies": {
+      "Q":"x.x.x",
       "grunt": "0.4.1",
       "grunt-contrib-coffee": "x.x.x",
       "grunt-contrib-watch": "x.x.x"

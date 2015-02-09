@@ -27,21 +27,21 @@
   setFileWatch = function() {
     var fileWatcher;
     fileWatcher = null;
-    dirObjArr.forEach(function(_dirObj) {
-      return fileWatcher = dirWacher.setFileWatch(_dirObj);
-    });
-    return fileWatcher.on('change', function(_mydirObj, _filename) {
-      if (syncType === SYNC_TO_LOCAL) {
-        return dirObjArr.forEach(function(__dirObj) {
-          if (_mydirObj.rootPath !== __dirObj.rootPath) {
-            return fileWatcher.emit('writeLocal', __dirObj, _mydirObj, _filename);
-          }
-        });
-      } else if (syncType === SYNC_TO_LAN_S) {
-        return console.log('s');
-      } else if (syncType === SYNC_TO_LAN_C) {
-        return console.log('c');
-      }
+    return dirObjArr.forEach(function(_dirObj) {
+      fileWatcher = dirWacher.setFileWatch(_dirObj);
+      return fileWatcher.on('change', function(_mydirObj, _filename) {
+        if (syncType === SYNC_TO_LOCAL) {
+          return dirObjArr.forEach(function(__dirObj) {
+            if (_mydirObj.rootPath !== __dirObj.rootPath) {
+              return fileWatcher.emit('writeLocal', __dirObj, _mydirObj, _filename);
+            }
+          });
+        } else if (syncType === SYNC_TO_LAN_S) {
+          return console.log('s');
+        } else if (syncType === SYNC_TO_LAN_C) {
+          return console.log('c');
+        }
+      });
     });
   };
 

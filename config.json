@@ -1,0 +1,6 @@
+/*local D:/web_developmentl/wamp/wamp/www/fileSyncTest/dir1 D:/web_developmentl/wamp/wamp/www/fileSyncTest/dir2* */
+{
+  "src":"D:/web_developmentl/wamp/wamp/www/fileSyncTest/dir1",
+  "dest":"D:/web_developmentl/wamp/wamp/www/fileSyncTest/dir2",
+  "mode":"local"
+}
